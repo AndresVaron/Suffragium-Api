@@ -1,7 +1,6 @@
 package logic;
 
 import entities.VotoEntity;
-import exceptions.BusinessLogicException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;

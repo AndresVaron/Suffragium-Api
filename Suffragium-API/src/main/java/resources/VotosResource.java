@@ -5,7 +5,7 @@
  */
 package resources;
 
-import dtos.VotoDTO;
+import entities.VotoEntity;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.enterprise.context.RequestScoped;
@@ -14,6 +14,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import logic.VotoLogic;
 
@@ -35,12 +36,18 @@ public class VotosResource {
     /**
      * Vota
      *
-     * @param voto a registrar en la BD
+     * @param valorVoto el voto a registrar
+     * @param municipio donde se voto
+     * @param departamento donde se voto
      */
     @POST
-    public void votar(VotoDTO voto) {
-        LOGGER.log(Level.INFO, "VotosResource votar, Input: {0} ", voto);
-        votoLogic.registrarVoto(voto.toEntity());
+    public void votar(@QueryParam("voto") Long valorVoto, @QueryParam("municipio") String municipio, @QueryParam("departamento") String departamento) {
+        LOGGER.log(Level.INFO, "VotosResource votar: Input = {0},{1},{2}", new Object[]{valorVoto, municipio, departamento});
+        VotoEntity voto = new VotoEntity();
+        voto.setIdCandidato(valorVoto);
+        voto.setDepartamento(departamento);
+        voto.setMunicipio(municipio);
+        votoLogic.registrarVoto(voto);
         LOGGER.log(Level.INFO, "VotosResource votar");
     }
 

@@ -52,12 +52,12 @@ public class ResultadosResource {
     public List<InfoGraficaBarraDTO> getBarra() {
         LOGGER.log(Level.INFO, "ResultadosResource getBarra");
         ArrayList<InfoGraficaBarraDTO> grafica = new ArrayList<>();
-        int total = votoLogic.getVotos().size();
+        double total = votoLogic.getVotos().size();
         for (CandidatoEntity candidato : candidatosLogic.getCandidatos()) {
-            int votos = resultadosLogic.contarVotosByCandidatoId(candidato.getId());
+            double votos = resultadosLogic.contarVotosByCandidatoId(candidato.getId());
             double porcentaje = 0;
             if (total > 0) {
-                porcentaje = Math.round(votos / total);
+                porcentaje = Math.round((votos / total) * 100);
             }
             InfoGraficaBarraDTO info = new InfoGraficaBarraDTO();
             info.setNombreCandidato(candidato.getNombre());
