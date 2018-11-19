@@ -6,6 +6,7 @@
 package entities;
 
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 
 /**
  *
@@ -16,6 +17,7 @@ public class BusquedaEntity extends BaseEntity {
     
     private String busqueda;
     
+    @Lob
     private String respuesta;
 
     /**

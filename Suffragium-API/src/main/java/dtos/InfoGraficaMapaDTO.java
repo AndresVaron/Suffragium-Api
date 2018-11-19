@@ -16,7 +16,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class InfoGraficaMapaDTO implements Serializable {
 
     private String nombreLugar;
-    private Integer numvotos;
+    private Integer numVotos;
+    private String busqueda;
 
     public InfoGraficaMapaDTO() {
 
@@ -24,7 +25,7 @@ public class InfoGraficaMapaDTO implements Serializable {
 
     public InfoGraficaMapaDTO(String nombreLugar, Integer numvotos) {
         this.nombreLugar = nombreLugar;
-        this.numvotos = numvotos;
+        this.numVotos = numvotos;
     }
 
     /**
@@ -41,22 +42,37 @@ public class InfoGraficaMapaDTO implements Serializable {
         this.nombreLugar = nombreLugar;
     }
 
-    /**
-     * @return the numvotos
-     */
-    public Integer getNumVotos() {
-        return numvotos;
-    }
-
-    /**
-     * @param numvotos the numvotos to set
-     */
-    public void setNumVotos(Integer numvotos) {
-        this.numvotos = numvotos;
-    }
 
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    /**
+     * @return the busqueda
+     */
+    public String getBusqueda() {
+        return busqueda;
+    }
+
+    /**
+     * @param busqueda the busqueda to set
+     */
+    public void setBusqueda(String busqueda) {
+        this.busqueda = busqueda;
+    }
+
+    /**
+     * @return the numVotos
+     */
+    public Integer getNumVotos() {
+        return numVotos;
+    }
+
+    /**
+     * @param numVotos the numVotos to set
+     */
+    public void setNumVotos(Integer numVotos) {
+        this.numVotos = numVotos;
     }
 }

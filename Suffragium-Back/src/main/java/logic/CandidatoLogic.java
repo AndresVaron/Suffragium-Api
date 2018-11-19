@@ -31,7 +31,7 @@ public class CandidatoLogic {
      */
     public CandidatoEntity registrarCandidato(CandidatoEntity candidatoEntity) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "Inicia proceso de creación de el candidato");
-        if (persistence.findByName(candidatoEntity.getNombre()) != null) {
+        if (persistence.findByName(candidatoEntity.getPalabraClave()) != null) {
             throw new BusinessLogicException("Ya existe un candidato con el nombre \"" + candidatoEntity.getNombre() + "\"");
         }
         persistence.create(candidatoEntity);

@@ -14,6 +14,8 @@ public class Lugar {
     private String nombreLugar;
 
     private Integer numvotos;
+    
+    private String busqueda;
 
     public Lugar(String nombreLugar, int numVotos) {
         this.nombreLugar = nombreLugar;
@@ -60,5 +62,19 @@ public class Lugar {
      */
     public void setNumvotos(Integer numvotos) {
         this.numvotos = numvotos;
+    }
+
+    /**
+     * @return the busqueda
+     */
+    public String getBusqueda() {
+        return busqueda;
+    }
+
+    /**
+     * @param busqueda the busqueda to set
+     */
+    public void setBusqueda(String busqueda) {
+        this.busqueda = busqueda;
     }
 }

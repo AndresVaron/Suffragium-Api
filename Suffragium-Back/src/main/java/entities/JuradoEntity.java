@@ -14,24 +14,6 @@ import javax.persistence.Entity;
 @Entity
 public class JuradoEntity extends BaseEntity {
 
-    private String direccion;
-
-    private String llave;
-
-    /**
-     * @return the direccion
-     */
-    public String getDireccion() {
-        return direccion;
-    }
-
-    /**
-     * @param direccion the direccion to set
-     */
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
     /**
      * @return the llave
      */
@@ -44,6 +26,25 @@ public class JuradoEntity extends BaseEntity {
      */
     public void setLlave(String llave) {
         this.llave = llave;
+    }
+
+    private String direccion;
+
+    private String llave;
+
+    
+    /**
+     * @return the direccion
+     */
+    public String getDireccion() {
+        return direccion;
+    }
+
+    /**
+     * @param direccion the direccion to set
+     */
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
 }

@@ -15,6 +15,9 @@ import javax.persistence.Entity;
 public class CandidatoEntity extends BaseEntity {
 
     private String nombre;
+    
+    private String palabraClave;
+    
 
     /**
      * @return the nombre
@@ -28,6 +31,20 @@ public class CandidatoEntity extends BaseEntity {
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    /**
+     * @return the palabraClave
+     */
+    public String getPalabraClave() {
+        return palabraClave;
+    }
+
+    /**
+     * @param palabraClave the palabraClave to set
+     */
+    public void setPalabraClave(String palabraClave) {
+        this.palabraClave = palabraClave;
     }
 
 }
